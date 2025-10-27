@@ -19,9 +19,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy to main branch (username.github.io)
+      - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: main
+          publish_branch: gh-pages
