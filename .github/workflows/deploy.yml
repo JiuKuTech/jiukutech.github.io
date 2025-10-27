@@ -1,0 +1,27 @@
+name: Deploy site to GitHub Pages (publish to main)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-deploy:
+    # avoid running this job when the push was made by this workflow (prevents loops)
+    if: github.actor != 'github-actions'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy to main branch (username.github.io)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: main
