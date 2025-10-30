@@ -18,7 +18,7 @@
       </div>
       <div class="right-column">
         <h2>{{ $t("contact.wechat") }}</h2>
-        <img src="/images/wechat-QRC.png" alt="微信二维码" class="qr-code" />
+        <img src="/images/Wechat-QRC.png" alt="微信二维码" class="qr-code" />
       </div>
     </div>
   </div>
