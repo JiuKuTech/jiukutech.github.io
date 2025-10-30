@@ -1,0 +1,18 @@
+{
+    "redbook": {
+        "icon": "xiaohongshu.svg",
+        "url": "https://www.xiaohongshu.com/user/profile/66609efa0000000003033c40"
+    },
+    "weibo": {
+        "icon": "weibo.svg",
+        "url": "https://weibo.com/jiukutech"
+    },
+    "tiktok": {
+        "icon": "tiktok.svg",
+        "url": "https://www.douyin.com/user/MS4wLjABAAAAXJiKl7ApoIxCuRv2FS8yvIpVvNKyBnJBi78U9iREiXk"
+    },
+    "x": {
+        "icon": "x.svg",
+        "url": "https://x.com/jiukutech"
+    }
+}
