@@ -1,0 +1,1 @@
+import{_ as t,c,a as s,o}from"./DK4cJ2q-.js";const a={},r={class:"services-page"};function n(i,e){return o(),c("div",r,[...e[0]||(e[0]=[s("h2",null,"Welcome to the Services Page",-1),s("p",null,"This is the services page of the application.",-1)])])}const p=t(a,[["render",n]]);export{p as default};

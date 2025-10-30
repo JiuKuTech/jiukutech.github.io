@@ -1,0 +1,1 @@
+import{_ as t,c as a,a as o,o as n}from"./DK4cJ2q-.js";const s={},c={class:"home-page"};function i(l,e){return n(),a("div",c,[...e[0]||(e[0]=[o("h2",null,"Welcome to the Home Page",-1),o("p",null,"This is the main landing page of the application.",-1)])])}const p=t(s,[["render",i]]);export{p as default};
