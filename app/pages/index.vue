@@ -48,6 +48,29 @@ const copy = {
 } as const
 
 const text = computed(() => copy[lang.value])
+const seoCopy = computed(() => ({
+  'zh-cn': {
+    title: '九酷游乐科技｜广州娃娃机与无人娱乐设备厂家',
+    description: '九酷游乐专注娃娃机、精品机、扭蛋机及无人娱乐设备研发制造，提供设备定制、SaaS、物联网和场景解决方案。'
+  },
+  'zh-tw': {
+    title: '九酷遊樂科技｜廣州娃娃機與無人娛樂設備廠家',
+    description: '九酷遊樂專注娃娃機、精品機、扭蛋機及無人娛樂設備研發製造，提供設備定制、SaaS、物聯網和場景解決方案。'
+  },
+  'en-us': {
+    title: 'JiuKu | Claw Machine & Amusement Equipment Manufacturer',
+    description: 'JiuKu manufactures claw machines and unattended amusement equipment with customization, SaaS, IoT and complete venue solutions.'
+  }
+})[lang.value])
+useHead(() => ({
+  title: seoCopy.value.title,
+  meta: [
+    { name: 'description', content: seoCopy.value.description },
+    { property: 'og:title', content: seoCopy.value.title },
+    { property: 'og:description', content: seoCopy.value.description },
+    { property: 'og:type', content: 'website' }
+  ]
+}))
 const featured = computed(() => products.filter(p => activeCategory.value === 'all' || p.category === activeCategory.value).slice(0, 6))
 const categories = ['all', 'claw', 'boutique', 'retail', 'support'] as const
 </script>

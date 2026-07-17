@@ -10,6 +10,19 @@ const copy = {
   'en-us': { title: 'Products and solutions', lead: 'Claw machines, premium games, retail and venue support equipment, with integrated hardware and software customization.', all: 'All', claw: 'Claw machines', boutique: 'Premium games', retail: 'Retail', support: 'Support equipment', quote: 'Request quote', solution: 'More than equipment', solutionText: 'Jiuku combines product selection, cabinet design, SaaS management, IoT connectivity and venue planning into one executable solution.', points: ['Equipment and cabinet customization', 'SaaS revenue and inventory management', 'Remote IoT maintenance', 'Themed space planning and delivery'], cta: 'Talk to our team about your project' }
 } as const
 const text = computed(() => copy[lang.value])
+const seoCopy = computed(() => ({
+  'zh-cn': { title: '娃娃机与无人娱乐设备｜九酷产品解决方案', description: '浏览九酷娃娃机、精品机、售卖设备和配套设备，了解设备定制、SaaS 管理、物联网运维及主题空间服务。' },
+  'zh-tw': { title: '娃娃機與無人娛樂設備｜九酷產品解決方案', description: '瀏覽九酷娃娃機、精品機、售賣設備和配套設備，了解設備定制、SaaS 管理、物聯網運維及主題空間服務。' },
+  'en-us': { title: 'Claw Machines & Amusement Equipment | JiuKu Products', description: 'Explore JiuKu claw machines, premium games, retail equipment, customization, SaaS management, IoT maintenance and venue solutions.' }
+})[lang.value])
+useHead(() => ({
+  title: seoCopy.value.title,
+  meta: [
+    { name: 'description', content: seoCopy.value.description },
+    { property: 'og:title', content: seoCopy.value.title },
+    { property: 'og:description', content: seoCopy.value.description }
+  ]
+}))
 const categories = ['all', 'claw', 'boutique', 'retail', 'support'] as const
 const list = computed(() => products.filter(p => active.value === 'all' || p.category === active.value))
 </script>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>JiuKu Amusement Technology | 九酷游乐科技</title>
+  <meta name="description" content="JiuKu develops claw machines and unattended amusement equipment with SaaS, IoT and venue solutions.">
+  <link rel="canonical" href="https://jiukuclaw.com/zh-cn">
+  <link rel="alternate" hreflang="zh-CN" href="https://jiukuclaw.com/zh-cn">
+  <link rel="alternate" hreflang="zh-TW" href="https://jiukuclaw.com/zh-tw">
+  <link rel="alternate" hreflang="en-US" href="https://jiukuclaw.com/en-us">
+  <link rel="alternate" hreflang="x-default" href="https://jiukuclaw.com/zh-cn">
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; color: #1d2733; background: #f5f7fa; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    main { max-width: 640px; padding: 40px 24px; text-align: center; }
+    h1 { margin: 0 0 12px; font-size: 32px; }
+    p { color: #697583; line-height: 1.7; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+    a { padding: 10px 16px; color: #1477d4; background: #fff; border: 1px solid #dce3ea; border-radius: 4px; text-decoration: none; }
+  </style>
+  <script>
+    (function () {
+      var cookieMatch = document.cookie.match(/(?:^|;\s*)i18n_redirected=([^;]+)/)
+      var saved = cookieMatch ? decodeURIComponent(cookieMatch[1]) : ''
+      var supported = ['zh-cn', 'zh-tw', 'en-us']
+      var target = supported.indexOf(saved) >= 0 ? saved : ''
+
+      if (!target) {
+        var browserLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || 'zh-CN'
+        var normalized = browserLanguage.toLowerCase()
+        if (normalized === 'zh-tw' || normalized === 'zh-hk' || normalized === 'zh-mo' || normalized.indexOf('zh-hant') === 0) {
+          target = 'zh-tw'
+        } else if (normalized.indexOf('zh') === 0) {
+          target = 'zh-cn'
+        } else if (normalized.indexOf('en') === 0) {
+          target = 'en-us'
+        } else {
+          target = 'zh-cn'
+        }
+        document.cookie = 'i18n_redirected=' + target + '; Path=/; Max-Age=31536000; SameSite=Lax; Secure'
+      }
+
+      window.location.replace('/' + target)
+    })()
+  </script>
+</head>
+<body>
+  <main>
+    <h1>九酷游乐科技</h1>
+    <p>正在根据您的浏览器语言打开网站。Choose your preferred language if the page does not redirect automatically.</p>
+    <nav aria-label="Language selection">
+      <a href="/zh-cn">简体中文</a>
+      <a href="/zh-tw">繁體中文</a>
+      <a href="/en-us">English</a>
+    </nav>
+  </main>
+</body>
+</html>

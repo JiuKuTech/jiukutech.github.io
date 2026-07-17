@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
+    baseUrl: 'https://jiukuclaw.com',
     locales: [
       { code: 'zh-cn', language: 'zh-CN', name: '简体中文', alias: ['zh'] },
       { code: 'zh-tw', language: 'zh-TW', name: '繁體中文' },
@@ -19,7 +20,13 @@ export default defineNuxtConfig({
     restructureDir: false,
     defaultLocale: 'zh-cn',
     vueI18n: './i18n.config.ts',
-    strategy: 'prefix'
+    strategy: 'prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      fallbackLocale: 'zh-cn'
+    }
   },
   compatibilityDate: '2025-10-30'
 })
