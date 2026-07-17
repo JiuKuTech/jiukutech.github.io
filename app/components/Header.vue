@@ -1,195 +1,90 @@
+<script setup lang="ts">
+const { locale, setLocale } = useI18n()
+const localePath = useLocalePath()
+const route = useRoute()
+const menuOpen = ref(false)
+const scrolled = ref(false)
+
+const links = computed(() => [
+  { to: localePath('/'), label: locale.value === 'en-us' ? 'Home' : locale.value === 'zh-tw' ? '首頁' : '首页' },
+  { to: localePath('/services'), label: locale.value === 'en-us' ? 'Products' : locale.value === 'zh-tw' ? '產品方案' : '产品方案' },
+  { to: localePath('/csr'), label: locale.value === 'en-us' ? 'Responsibility' : locale.value === 'zh-tw' ? '社會責任' : '社会责任' },
+  { to: localePath('/about'), label: locale.value === 'en-us' ? 'About' : locale.value === 'zh-tw' ? '關於九酷' : '关于九酷' },
+  { to: localePath('/contact'), label: locale.value === 'en-us' ? 'Contact' : locale.value === 'zh-tw' ? '聯絡我們' : '联系我们' }
+])
+
+const onScroll = () => { scrolled.value = window.scrollY > 12 }
+const changeLocale = async (code: 'zh-cn' | 'zh-tw' | 'en-us') => {
+  menuOpen.value = false
+  await setLocale(code)
+}
+
+watch(() => route.fullPath, () => { menuOpen.value = false })
+watch(menuOpen, value => {
+  if (import.meta.client) document.body.classList.toggle('menu-open', value)
+})
+
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+  document.body.classList.remove('menu-open')
+})
+</script>
+
 <template>
-  <header
-    class="site-header"
-    :class="{ transparent: isTransparent, hidden: hidden }"
-  >
-    <div class="container header-inner">
-      <h1 class="logo">
-        <NuxtLink to="/">
-            <img src="~/assets/logo/colorful.png" alt="九酷游乐" class="logo-img" />
-        </NuxtLink>
-      </h1>
-      <nav>
-        <NuxtLink :to="localePath('/')">{{ $t('home') }}</NuxtLink>
-        <NuxtLink :to="localePath('/services')">{{ $t('services') }}</NuxtLink>
-        <NuxtLink :to="localePath('/csr')">{{ $t('csr') }}</NuxtLink>
-        <NuxtLink :to="localePath('/about')">{{ $t('about') }}</NuxtLink>
-        <NuxtLink :to="localePath('/contact')">{{ $t('contact') }}</NuxtLink>
-        <!-- 语言选择控件（放在顶栏的最后一个） -->
+  <header class="site-header" :class="{ scrolled, open: menuOpen }">
+    <div class="site-container header-inner">
+      <NuxtLink :to="localePath('/')" class="logo-link" aria-label="九酷首页">
+        <img src="~/assets/logo/colorful.png" alt="九酷游乐">
+      </NuxtLink>
+      <button class="menu-toggle" type="button" :aria-expanded="menuOpen" aria-label="打开导航" @click="menuOpen = !menuOpen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="主导航">
+        <NuxtLink v-for="link in links" :key="link.to" :to="link.to">{{ link.label }}</NuxtLink>
         <div class="lang-picker" aria-label="语言选择">
-          <button :class="{active: langState && langState.lang==='zh-cn'}" @click="setLang && setLang('zh-cn')">简</button>
-          <span class="separator">/</span>
-          <button :class="{active: langState && langState.lang==='zh-tw'}" @click="setLang && setLang('zh-tw')">繁</button>
-          <span class="separator">/</span>
-          <button :class="{active: langState && langState.lang==='en-us'}" @click="setLang && setLang('en-us')">EN</button>
+          <button :class="{ active: locale === 'zh-cn' }" @click="changeLocale('zh-cn')">简</button>
+          <span>/</span>
+          <button :class="{ active: locale === 'zh-tw' }" @click="changeLocale('zh-tw')">繁</button>
+          <span>/</span>
+          <button :class="{ active: locale === 'en-us' }" @click="changeLocale('en-us')">EN</button>
         </div>
       </nav>
     </div>
   </header>
 </template>
 
-<script>
-import { ref, onMounted, onUnmounted, inject } from 'vue'
-
-export default {
-  name: 'Header',
-  setup() {
-    const isTransparent = ref(false)
-    const hidden = ref(false)
-    const localePath = useLocalePath() 
-    let lastY = 0
-    let ticking = false
-
-    // 确保代码在客户端执行
-    const handle = () => {
-      if (typeof window !== 'undefined') {
-        const y = window.scrollY || 0
-        // 透明效果：下滑一点就显示模糊透明
-        isTransparent.value = y > 10
-
-        // 隐藏/显示：根据滚动方向
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            if (y > lastY + 10 && y > 80) {
-              // 向下并超过阈值，隐藏
-              hidden.value = true
-            } else if (y < lastY - 10) {
-              // 向上，显示
-              hidden.value = false
-            }
-            lastY = y
-            ticking = false
-          })
-          ticking = true
-        }
-      }
-    }
-
-    onMounted(() => {
-      if (typeof window !== 'undefined') {
-        lastY = window.scrollY || 0
-        window.addEventListener('scroll', handle)
-      }
-    })
-
-    onUnmounted(() => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('scroll', handle)
-      }
-    })
-
-    // 注入由 App 提供的语言状态与设置函数
-    const langState = inject('langState')
-    const setLang = inject('setLang')
-
-    return { isTransparent, hidden, langState, setLang, localePath }
-  }
-}
-</script>
-
-
 <style scoped>
-.logo { margin: 0; }
-.logo :deep(a) { color: #111; text-decoration: none; font-weight: 700; font-size: 18px; }
-
-.logo :deep(img) {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-.site-header {
-  background: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2000;
-  color: #222;
-  padding: 8px 0;
-  transition: background 200ms ease, transform 260ms ease, box-shadow 200ms ease;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-}
-
-.site-header.transparent {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-}
-
-.site-header.hidden {
-  transform: translateY(-110%);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-.logo { margin: 0; }
-.logo :deep(a) { color: #111; text-decoration: none; font-weight: 700; font-size: 18px; }
-
-nav { 
-  display: flex; 
-  gap: 24px; 
-  align-items: center; 
-}
-
-nav :deep(a) {
-  color: #111;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
-}
-
-nav :deep(a:hover) {
-  color: #0d6efd;
-}
-
-.nav-link { 
-  color: #111 !important; 
-  text-decoration: none; 
-  font-size: 14px; 
-  transition: color 0.3s;
-}
-
-.nav-link:hover { 
-  color: #0d6efd !important; 
-}
-
-.lang-picker { 
-  display: flex; 
-  gap: 8px; 
-  align-items: center; 
-}
-
-.lang-picker button { 
-  padding: 0;
-  border: none;
-  background: transparent;
-  color: #111;
-  font-size: 14px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.lang-picker button:hover { 
-  color: #0d6efd;
-}
-
-.lang-picker button.active { 
-  color: #0d6efd;
-  font-weight: 600;
-}
-
-.lang-picker .separator {
-  color: #ccc;
-  font-size: 14px;
-  user-select: none;
+.site-header { position: fixed; inset: 0 0 auto; z-index: 1000; height: 68px; background: rgba(255,255,255,.98); border-bottom: 1px solid rgba(20,29,45,.08); transition: box-shadow .2s ease, background .2s ease; }
+.site-header.scrolled { background: rgba(255,255,255,.9); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(18,34,59,.08); }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.logo-link, .logo-link img { display: block; }
+.logo-link img { width: auto; height: 42px; }
+.main-nav { display: flex; align-items: center; gap: 28px; height: 100%; }
+.main-nav :deep(a) { position: relative; color: #202834; font-size: 14px; text-decoration: none; white-space: nowrap; }
+.main-nav :deep(a::after) { content: ''; position: absolute; left: 0; right: 100%; bottom: -10px; height: 2px; background: #1477d4; transition: right .2s ease; }
+.main-nav :deep(a:hover), .main-nav :deep(a.router-link-active) { color: #1477d4; }
+.main-nav :deep(a:hover::after), .main-nav :deep(a.router-link-active::after) { right: 0; }
+.lang-picker { display: flex; align-items: center; gap: 7px; margin-left: 4px; color: #c2c8d0; }
+.lang-picker button { padding: 4px 0; border: 0; background: transparent; color: #66717f; font-size: 13px; border-radius: 0; }
+.lang-picker button.active { color: #1477d4; font-weight: 700; }
+.menu-toggle { display: none; width: 40px; height: 40px; padding: 9px; background: transparent; border: 0; }
+.menu-toggle span { display: block; width: 22px; height: 2px; margin: 5px 0; background: #202834; transition: transform .2s ease, opacity .2s ease; }
+@media (max-width: 860px) {
+  .site-header { height: 60px; }
+  .logo-link img { height: 36px; }
+  .menu-toggle { display: block; }
+  .open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .open .menu-toggle span:nth-child(2) { opacity: 0; }
+  .open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .main-nav { position: absolute; top: 60px; left: 0; right: 0; height: auto; padding: 18px 20px 24px; background: #fff; border-top: 1px solid #edf0f4; box-shadow: 0 18px 30px rgba(18,34,59,.12); flex-direction: column; align-items: stretch; gap: 0; transform: translateY(-10px); opacity: 0; visibility: hidden; transition: .2s ease; }
+  .open .main-nav { transform: translateY(0); opacity: 1; visibility: visible; }
+  .main-nav :deep(a) { padding: 13px 2px; font-size: 16px; border-bottom: 1px solid #edf0f4; }
+  .main-nav :deep(a::after) { display: none; }
+  .lang-picker { margin: 14px 0 0; gap: 12px; }
+  .lang-picker button { font-size: 14px; }
 }
 </style>
-
