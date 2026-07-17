@@ -17,7 +17,7 @@ onMounted(async () => {
 <template>
   <footer class="site-footer">
     <div class="site-container footer-grid">
-      <div class="footer-brand"><NuxtLink :to="localePath('/')"><img src="~/assets/logo/colorful.png" alt="九酷游乐"></NuxtLink><p>{{ text.intro }}</p></div>
+      <div class="footer-brand"><NuxtLink :to="localePath('/')"><img src="~/assets/logo/colorful.png" :alt="locale === 'en-us' ? 'JiuKu Amusement' : '九酷游乐'"></NuxtLink><p>{{ text.intro }}</p></div>
       <div class="footer-contact"><h2>{{ text.contact }}</h2><a href="tel:+8613710441030">{{ text.phone }}：+86 137 1044 1030</a><a href="mailto:82096004@qq.com">{{ text.email }}：82096004@qq.com</a><p>{{ text.address }}</p></div>
       <div class="footer-social"><h2>{{ text.follow }}</h2><div><a v-for="(item, key) in socialConfig" :key="key" :href="item.url" target="_blank" rel="noopener noreferrer" :aria-label="key"><img :src="`/follow/${item.icon}`" :alt="key"></a></div></div>
     </div>

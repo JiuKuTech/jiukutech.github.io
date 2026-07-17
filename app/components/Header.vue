@@ -37,19 +37,17 @@ onUnmounted(() => {
 <template>
   <header class="site-header" :class="{ scrolled, open: menuOpen }">
     <div class="site-container header-inner">
-      <NuxtLink :to="localePath('/')" class="logo-link" aria-label="九酷首页">
-        <img src="~/assets/logo/colorful.png" alt="九酷游乐">
+      <NuxtLink :to="localePath('/')" class="logo-link" :aria-label="locale === 'en-us' ? 'JiuKu home' : '九酷首页'">
+        <img src="~/assets/logo/colorful.png" :alt="locale === 'en-us' ? 'JiuKu Amusement' : '九酷游乐'">
       </NuxtLink>
-      <button class="menu-toggle" type="button" :aria-expanded="menuOpen" aria-label="打开导航" @click="menuOpen = !menuOpen">
+      <button class="menu-toggle" type="button" :aria-expanded="menuOpen" :aria-label="locale === 'en-us' ? 'Open navigation' : '打开导航'" @click="menuOpen = !menuOpen">
         <span></span><span></span><span></span>
       </button>
-      <nav class="main-nav" aria-label="主导航">
+      <nav class="main-nav" :aria-label="locale === 'en-us' ? 'Primary navigation' : '主导航'">
         <NuxtLink v-for="link in links" :key="link.to" :to="link.to">{{ link.label }}</NuxtLink>
-        <div class="lang-picker" aria-label="语言选择">
-          <button :class="{ active: locale === 'zh-cn' }" @click="changeLocale('zh-cn')">简</button>
-          <span>/</span>
-          <button :class="{ active: locale === 'zh-tw' }" @click="changeLocale('zh-tw')">繁</button>
-          <span>/</span>
+        <div class="lang-picker" :aria-label="locale === 'en-us' ? 'Language selection' : '语言选择'">
+          <button :class="{ active: locale === 'zh-cn' }" @click="changeLocale('zh-cn')">简</button><span>/</span>
+          <button :class="{ active: locale === 'zh-tw' }" @click="changeLocale('zh-tw')">繁</button><span>/</span>
           <button :class="{ active: locale === 'en-us' }" @click="changeLocale('en-us')">EN</button>
         </div>
       </nav>
@@ -69,7 +67,7 @@ onUnmounted(() => {
 .main-nav :deep(a:hover), .main-nav :deep(a.router-link-active) { color: #1477d4; }
 .main-nav :deep(a:hover::after), .main-nav :deep(a.router-link-active::after) { right: 0; }
 .lang-picker { display: flex; align-items: center; gap: 7px; margin-left: 4px; color: #c2c8d0; }
-.lang-picker button { padding: 4px 0; border: 0; background: transparent; color: #66717f; font-size: 13px; border-radius: 0; }
+.lang-picker button { padding: 4px 0; border: 0; background: transparent; color: #66717f; font-size: 13px; }
 .lang-picker button.active { color: #1477d4; font-weight: 700; }
 .menu-toggle { display: none; width: 40px; height: 40px; padding: 9px; background: transparent; border: 0; }
 .menu-toggle span { display: block; width: 22px; height: 2px; margin: 5px 0; background: #202834; transition: transform .2s ease, opacity .2s ease; }
