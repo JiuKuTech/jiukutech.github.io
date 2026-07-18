@@ -11,7 +11,7 @@ const copy = {
     eyebrow: '广州九酷游乐科技有限公司', title: '让每一台设备，成为场景里的快乐入口',
     heroText: '专注娃娃机及无人娱乐设备研发制造，提供硬件、SaaS、物联网与投放运营一体化服务。',
     explore: '浏览产品', consult: '项目咨询', products: '精选产品', productLead: '从单机到主题专区，为不同场地提供灵活的设备组合。',
-    categories: { all: '全部', claw: '娃娃机', boutique: '精品机', retail: '售卖设备', support: '配套设备' },
+    categories: { all: '全部', claw: '单人机型', stacked: '双层组合', multiplayer: '多人互动', themed: '主题定制' },
     quote: '获取报价', allProducts: '查看全部产品', solutions: '一体化解决方案', solutionLead: '设备、系统与空间同步规划，让项目更快落地并持续运营。',
     solutionItems: [
       ['设备定制', '根据礼品、玩法、场地与品牌要求，提供结构、外观和功能定制。'],
@@ -27,7 +27,7 @@ const copy = {
     eyebrow: '廣州九酷遊樂科技有限公司', title: '讓每一台設備，成為場景裡的快樂入口',
     heroText: '專注娃娃機及無人娛樂設備研發製造，提供硬體、SaaS、物聯網與投放營運一體化服務。',
     explore: '瀏覽產品', consult: '專案諮詢', products: '精選產品', productLead: '從單機到主題專區，為不同場地提供靈活的設備組合。',
-    categories: { all: '全部', claw: '娃娃機', boutique: '精品機', retail: '售賣設備', support: '配套設備' },
+    categories: { all: '全部', claw: '單人機型', stacked: '雙層組合', multiplayer: '多人互動', themed: '主題定制' },
     quote: '獲取報價', allProducts: '查看全部產品', solutions: '一體化解決方案', solutionLead: '設備、系統與空間同步規劃，讓專案更快落地並持續營運。',
     solutionItems: [['設備定制', '根據禮品、玩法、場地與品牌要求，提供結構、外觀和功能定制。'], ['SaaS 與物聯網', '支援設備狀態、營收、庫存和會員營運的遠端數位化管理。'], ['場景定制', '從設備組合到主題設計與落地，構建完整的娛樂消費空間。']],
     strength: '從研發製造到營運服務', strengthText: '九酷創立於 2014 年，總部位於廣州番禺，持續深耕無人娛樂設備及數位化營運。',
@@ -38,7 +38,7 @@ const copy = {
     eyebrow: 'Guangzhou Jiuku Amusement Technology Co., Ltd.', title: 'Turn every machine into a destination for fun',
     heroText: 'Claw machines and unattended entertainment equipment, backed by hardware, SaaS, IoT and operating support.',
     explore: 'Explore products', consult: 'Start a project', products: 'Featured products', productLead: 'Flexible equipment combinations, from standalone machines to complete themed zones.',
-    categories: { all: 'All', claw: 'Claw machines', boutique: 'Premium games', retail: 'Retail', support: 'Support equipment' },
+    categories: { all: 'All', claw: 'Single player', stacked: 'Stacked systems', multiplayer: 'Multiplayer', themed: 'Custom themes' },
     quote: 'Request quote', allProducts: 'View all products', solutions: 'Integrated solutions', solutionLead: 'Equipment, software and space planned together for a faster launch and sustainable operation.',
     solutionItems: [['Equipment customization', 'Cabinet, appearance and function tailored to prizes, gameplay, venue and brand.'], ['SaaS and IoT', 'Remote visibility into machine status, revenue, inventory and member operations.'], ['Venue customization', 'Equipment planning, themed design and delivery for a complete entertainment space.']],
     strength: 'From R&D and production to operations', strengthText: 'Founded in 2014 and based in Panyu, Guangzhou, Jiuku focuses on unattended amusement equipment and digital operations.',
@@ -72,13 +72,13 @@ useHead(() => ({
   ]
 }))
 const featured = computed(() => products.filter(p => activeCategory.value === 'all' || p.category === activeCategory.value).slice(0, 6))
-const categories = ['all', 'claw', 'boutique', 'retail', 'support'] as const
+const categories = ['all', 'claw', 'stacked', 'multiplayer', 'themed'] as const
 </script>
 
 <template>
   <main>
     <section class="home-hero">
-      <img src="/products/overseas-claw.webp" alt="九酷娃娃机" class="home-hero-image">
+      <img src="/products-owned/hero-machines.webp" :alt="text.products" class="home-hero-image">
       <div class="home-hero-shade"></div>
       <div class="site-container home-hero-content">
         <p class="eyebrow">{{ text.eyebrow }}</p>

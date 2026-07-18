@@ -13,10 +13,19 @@ const copy = {
     facts: [['2014', '公司创立'], ['广州番禺', '研发与服务基地'], ['一体化', '设备、系统、场景与运营']],
     capabilityKicker: 'WHAT WE DO', capabilityTitle: '从一台设备到完整场景', capabilityLead: '围绕运营商的实际需求，将产品、技术和交付服务整合成清晰的能力体系。',
     capabilities: [
-      { no: '01', title: '产品研发制造', text: '聚焦娃娃机、精品机、售卖及配套设备，兼顾结构可靠性、使用体验与维护便利。' },
+      { no: '01', title: '产品研发制造', text: '聚焦单人娃娃机、双层组合机、多人互动设备及主题定制，兼顾结构可靠性、使用体验与维护便利。' },
       { no: '02', title: '软硬件一体化', text: '通过 SaaS 与物联网能力连接设备状态、营收、库存和运营管理，提升管理效率。' },
       { no: '03', title: '定制与场景设计', text: '根据品牌、礼品、玩法和场地特点，提供外观、功能、设备组合与主题空间方案。' },
       { no: '04', title: '交付与运营支持', text: '从需求沟通、方案选型到生产交付与后续维护，让项目推进更顺畅。' }
+    ],
+    certKicker: 'QUALIFICATIONS', certTitle: '研发积累与合规能力', certLead: '通过软件著作权、产品内容审核与 CE 符合性文件，持续沉淀产品研发和市场交付能力。',
+    certificates: [
+      ['游戏游艺设备内容审核', '广东省文化厅内容审核批准文件', '/certifications/content-approval.webp'],
+      ['CE 电磁兼容符合性', '符合 2014/30/EU 电磁兼容指令', '/certifications/ce-emc.webp'],
+      ['CE 低电压符合性', '符合 2014/35/EU 低电压指令', '/certifications/ce-lvd.webp'],
+      ['机甲机器人控制系统', '计算机软件著作权登记证书', '/certifications/software-machine-control.webp'],
+      ['自动售货系统', '计算机软件著作权登记证书', '/certifications/software-vending.webp'],
+      ['游戏控制器软件', '计算机软件著作权登记证书', '/certifications/software-game-control.webp']
     ],
     approachKicker: 'OUR APPROACH', approachTitle: '把长期价值放在每一次选择里', approachText: '产品会更新，技术会变化，但可靠、坦诚和对用户体验的关注始终是九酷做事的基础。',
     values: [
@@ -35,10 +44,19 @@ const copy = {
     facts: [['2014', '公司創立'], ['廣州番禺', '研發與服務基地'], ['一體化', '設備、系統、場景與營運']],
     capabilityKicker: 'WHAT WE DO', capabilityTitle: '從一台設備到完整場景', capabilityLead: '圍繞營運商的實際需求，將產品、技術和交付服務整合成清晰的能力體系。',
     capabilities: [
-      { no: '01', title: '產品研發製造', text: '聚焦娃娃機、精品機、售賣及配套設備，兼顧結構可靠性、使用體驗與維護便利。' },
+      { no: '01', title: '產品研發製造', text: '聚焦單人娃娃機、雙層組合機、多人互動設備及主題定制，兼顧結構可靠性、使用體驗與維護便利。' },
       { no: '02', title: '軟硬體一體化', text: '透過 SaaS 與物聯網能力連接設備狀態、營收、庫存和營運管理，提升管理效率。' },
       { no: '03', title: '定制與場景設計', text: '根據品牌、禮品、玩法和場地特點，提供外觀、功能、設備組合與主題空間方案。' },
       { no: '04', title: '交付與營運支援', text: '從需求溝通、方案選型到生產交付與後續維護，讓專案推進更順暢。' }
+    ],
+    certKicker: 'QUALIFICATIONS', certTitle: '研發積累與合規能力', certLead: '透過軟體著作權、產品內容審核與 CE 符合性文件，持續沉澱產品研發和市場交付能力。',
+    certificates: [
+      ['遊戲遊藝設備內容審核', '廣東省文化廳內容審核批准文件', '/certifications/content-approval.webp'],
+      ['CE 電磁相容符合性', '符合 2014/30/EU 電磁相容指令', '/certifications/ce-emc.webp'],
+      ['CE 低電壓符合性', '符合 2014/35/EU 低電壓指令', '/certifications/ce-lvd.webp'],
+      ['機甲機器人控制系統', '電腦軟體著作權登記證書', '/certifications/software-machine-control.webp'],
+      ['自動售貨系統', '電腦軟體著作權登記證書', '/certifications/software-vending.webp'],
+      ['遊戲控制器軟體', '電腦軟體著作權登記證書', '/certifications/software-game-control.webp']
     ],
     approachKicker: 'OUR APPROACH', approachTitle: '把長期價值放在每一次選擇裡', approachText: '產品會更新，技術會變化，但可靠、坦誠和對用戶體驗的關注始終是九酷做事的基礎。',
     values: [['以用戶為中心', '理解營運者與玩家的真實需求，用體驗檢驗產品價值。'], ['持續創新', '以務實方式探索新技術、新玩法和更高效的營運工具。'], ['可靠合作', '重視品質、回應與長期溝通，與夥伴共同解決問題。']],
@@ -52,10 +70,19 @@ const copy = {
     facts: [['2014', 'Founded'], ['Guangzhou', 'R&D and service base'], ['Integrated', 'Equipment, software, spaces and operations']],
     capabilityKicker: 'WHAT WE DO', capabilityTitle: 'From a single machine to a complete venue', capabilityLead: 'We bring products, technology and delivery services together around the practical needs of operators.',
     capabilities: [
-      { no: '01', title: 'Product development', text: 'Claw, premium, retail and support equipment designed for reliability, usability and easier maintenance.' },
+      { no: '01', title: 'Product development', text: 'Single-player, stacked, multiplayer and custom-themed equipment designed for reliability, usability and easier maintenance.' },
       { no: '02', title: 'Hardware and software', text: 'SaaS and IoT capabilities connect machine status, revenue, inventory and operating management.' },
       { no: '03', title: 'Customization and spaces', text: 'Appearance, function, equipment mix and themed spaces tailored to brands, prizes, gameplay and venues.' },
       { no: '04', title: 'Delivery and support', text: 'A connected path from discovery and product selection through production, delivery and ongoing service.' }
+    ],
+    certKicker: 'QUALIFICATIONS', certTitle: 'R&D assets and compliance', certLead: 'Software registrations, content approval and CE conformity documents support our product development and market delivery capabilities.',
+    certificates: [
+      ['Amusement content approval', 'Content approval issued by the Guangdong cultural authority', '/certifications/content-approval.webp'],
+      ['CE electromagnetic compatibility', 'Conformity with EU Directive 2014/30/EU', '/certifications/ce-emc.webp'],
+      ['CE low voltage conformity', 'Conformity with EU Directive 2014/35/EU', '/certifications/ce-lvd.webp'],
+      ['Machine control system', 'Computer software copyright registration', '/certifications/software-machine-control.webp'],
+      ['Automated vending system', 'Computer software copyright registration', '/certifications/software-vending.webp'],
+      ['Game controller software', 'Computer software copyright registration', '/certifications/software-game-control.webp']
     ],
     approachKicker: 'OUR APPROACH', approachTitle: 'Long-term value in every decision', approachText: 'Products evolve and technology changes, but reliability, openness and attention to user experience remain the foundation of how we work.',
     values: [['User-centered', 'Understand real operator and player needs, and measure value through experience.'], ['Always improving', 'Explore new technology, gameplay and operating tools with a practical mindset.'], ['Reliable partnerships', 'Value quality, responsiveness and long-term communication while solving problems together.']],
@@ -87,6 +114,18 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
     <section class="about-section site-container">
       <div class="about-heading"><p class="about-kicker">{{ text.capabilityKicker }}</p><h2>{{ text.capabilityTitle }}</h2><p>{{ text.capabilityLead }}</p></div>
       <div class="capability-grid"><article v-for="item in text.capabilities" :key="item.no"><span>{{ item.no }}</span><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article></div>
+    </section>
+
+    <section class="qualification-section">
+      <div class="site-container">
+        <div class="about-heading"><p class="about-kicker">{{ text.certKicker }}</p><h2>{{ text.certTitle }}</h2><p>{{ text.certLead }}</p></div>
+        <div class="qualification-grid">
+          <a v-for="certificate in text.certificates" :key="certificate[0]" :href="certificate[2]" target="_blank" rel="noopener" class="qualification-card">
+            <div class="qualification-image"><img :src="certificate[2]" :alt="certificate[0]" loading="lazy"></div>
+            <div><h3>{{ certificate[0] }}</h3><p>{{ certificate[1] }}</p></div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section class="approach-section"><div class="site-container approach-layout">
@@ -132,6 +171,15 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
 .capability-grid span { color: var(--brand); font-size: 12px; font-weight: 700; }
 .capability-grid h3 { margin: 16px 0 10px; font-size: 22px; }
 .capability-grid p { margin: 0; }
+.qualification-section { padding: 96px 0; background: var(--soft); border-top: 1px solid var(--line); }
+.qualification-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.qualification-card { overflow: hidden; color: inherit; background: #fff; border: 1px solid var(--line); border-radius: 7px; text-decoration: none; transition: transform .22s ease, box-shadow .22s ease; }
+.qualification-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(31,51,75,.11); }
+.qualification-image { height: 260px; padding: 18px; display: grid; place-items: center; background: #eef2f6; }
+.qualification-image img { width: 100%; height: 100%; object-fit: contain; }
+.qualification-card > div:last-child { padding: 20px 22px 23px; }
+.qualification-card h3 { margin: 0 0 8px; font-size: 18px; }
+.qualification-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .approach-section { padding: 100px 0; color: #fff; background: #142d42; }
 .approach-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; }
 .approach-layout > div > p:last-child { color: #b8c6d2; }
@@ -161,6 +209,8 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
   .facts-grid div, .facts-grid div:last-child { padding: 24px 0; border-left: 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .capability-grid { grid-template-columns: 1fr; }
   .capability-grid article, .capability-grid article:nth-child(even) { padding: 26px 0; border-left: 0; }
+  .qualification-section { padding: 68px 0; }
+  .qualification-grid { grid-template-columns: 1fr; gap: 16px; }
   .approach-section { padding: 72px 0; }
   .vision-layout { grid-template-columns: 1fr; gap: 32px; }
   .vision-mark { width: 100px; height: 100px; font-size: 50px; }
