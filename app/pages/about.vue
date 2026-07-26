@@ -6,15 +6,15 @@ const copy = {
   'zh-cn': {
     metaTitle: '关于九酷 | 九酷游乐科技', metaDescription: '了解九酷游乐的公司定位、产品能力、服务体系与长期理念。',
     eyebrow: 'ABOUT JIUKU', title: '让设备、系统与场景，共同创造快乐',
-    heroText: '九酷专注无人娱乐设备研发制造，并以软件、物联网和运营服务连接产品全生命周期。',
+    heroText: '九酷从无人娱乐设备研发制造出发，持续拓展场地管理系统、物联网与定制软件开发能力。',
     introKicker: 'WHO WE ARE', introTitle: '扎根广州番禺，专注游乐科技',
-    introText: '广州九酷游乐科技有限公司创立于 2014 年。我们从娃娃机等无人娱乐设备出发，持续拓展硬件研发、外观与功能定制、数字化管理和场景落地能力，为运营商提供更完整、更易执行的项目方案。',
-    introText2: '我们关注的不只是设备交付，更是设备进入真实场景后的稳定体验、运营效率和长期价值。',
-    facts: [['2014', '公司创立'], ['广州番禺', '研发与服务基地'], ['一体化', '设备、系统、场景与运营']],
+    introText: '广州九酷游乐科技有限公司创立于 2014 年。我们从娃娃机等无人娱乐设备出发，持续拓展硬件研发、外观与功能定制、数字化管理、场景落地和软件开发能力，为客户提供更完整、更易执行的项目方案。',
+    introText2: '除设备业务外，我们正在开发场地管理系统，也承接企业管理系统、Web 应用及其他定制软件外包开发。',
+    facts: [['2014', '公司创立'], ['广州番禺', '研发与服务基地'], ['设备 + 软件', '制造、系统与定制开发']],
     capabilityKicker: 'WHAT WE DO', capabilityTitle: '从一台设备到完整场景', capabilityLead: '围绕运营商的实际需求，将产品、技术和交付服务整合成清晰的能力体系。',
     capabilities: [
       { no: '01', title: '产品研发制造', text: '聚焦单人娃娃机、双层组合机、多人互动设备及主题定制，兼顾结构可靠性、使用体验与维护便利。' },
-      { no: '02', title: '软硬件一体化', text: '通过 SaaS 与物联网能力连接设备状态、营收、库存和运营管理，提升管理效率。' },
+      { no: '02', title: '软件系统与定制开发', text: '正在开发场地管理系统，并提供 SaaS、物联网、企业管理系统与 Web 应用等定制软件开发服务。' },
       { no: '03', title: '定制与场景设计', text: '根据品牌、礼品、玩法和场地特点，提供外观、功能、设备组合与主题空间方案。' },
       { no: '04', title: '交付与运营支持', text: '从需求沟通、方案选型到生产交付与后续维护，让项目推进更顺畅。' }
     ],
@@ -39,13 +39,13 @@ const copy = {
   },
   'zh-tw': {
     metaTitle: '關於九酷 | 九酷遊樂科技', metaDescription: '了解九酷遊樂的公司定位、產品能力、服務體系與長期理念。',
-    eyebrow: 'ABOUT JIUKU', title: '讓設備、系統與場景，共同創造快樂', heroText: '九酷專注無人娛樂設備研發製造，並以軟體、物聯網和營運服務連接產品全生命週期。',
-    introKicker: 'WHO WE ARE', introTitle: '扎根廣州番禺，專注遊樂科技', introText: '廣州九酷遊樂科技有限公司創立於 2014 年。我們從娃娃機等無人娛樂設備出發，持續拓展硬體研發、外觀與功能定制、數位化管理和場景落地能力，為營運商提供更完整、更易執行的專案方案。', introText2: '我們關注的不只是設備交付，更是設備進入真實場景後的穩定體驗、營運效率和長期價值。',
-    facts: [['2014', '公司創立'], ['廣州番禺', '研發與服務基地'], ['一體化', '設備、系統、場景與營運']],
+    eyebrow: 'ABOUT JIUKU', title: '讓設備、系統與場景，共同創造快樂', heroText: '九酷從無人娛樂設備研發製造出發，持續拓展場地管理系統、物聯網與定制軟體開發能力。',
+    introKicker: 'WHO WE ARE', introTitle: '扎根廣州番禺，專注遊樂科技', introText: '廣州九酷遊樂科技有限公司創立於 2014 年。我們從娃娃機等無人娛樂設備出發，持續拓展硬體研發、外觀與功能定制、數位化管理、場景落地和軟體開發能力，為客戶提供更完整、更易執行的專案方案。', introText2: '除設備業務外，我們正在開發場地管理系統，也承接企業管理系統、Web 應用及其他定制軟體外包開發。',
+    facts: [['2014', '公司創立'], ['廣州番禺', '研發與服務基地'], ['設備 + 軟體', '製造、系統與定制開發']],
     capabilityKicker: 'WHAT WE DO', capabilityTitle: '從一台設備到完整場景', capabilityLead: '圍繞營運商的實際需求，將產品、技術和交付服務整合成清晰的能力體系。',
     capabilities: [
       { no: '01', title: '產品研發製造', text: '聚焦單人娃娃機、雙層組合機、多人互動設備及主題定制，兼顧結構可靠性、使用體驗與維護便利。' },
-      { no: '02', title: '軟硬體一體化', text: '透過 SaaS 與物聯網能力連接設備狀態、營收、庫存和營運管理，提升管理效率。' },
+      { no: '02', title: '軟體系統與定制開發', text: '正在開發場地管理系統，並提供 SaaS、物聯網、企業管理系統與 Web 應用等定制軟體開發服務。' },
       { no: '03', title: '定制與場景設計', text: '根據品牌、禮品、玩法和場地特點，提供外觀、功能、設備組合與主題空間方案。' },
       { no: '04', title: '交付與營運支援', text: '從需求溝通、方案選型到生產交付與後續維護，讓專案推進更順暢。' }
     ],
@@ -65,13 +65,13 @@ const copy = {
   },
   'en-us': {
     metaTitle: 'About JiuKu | JiuKu Amusement Technology', metaDescription: 'Learn about JiuKu’s company focus, product capabilities, service system and long-term approach.',
-    eyebrow: 'ABOUT JIUKU', title: 'Equipment, software and spaces—working together to create fun', heroText: 'JiuKu develops and manufactures unattended amusement equipment, connecting the product lifecycle with software, IoT and operating support.',
-    introKicker: 'WHO WE ARE', introTitle: 'Amusement technology, rooted in Panyu, Guangzhou', introText: 'Founded in 2014, Guangzhou JiuKu Amusement Technology began with unattended entertainment equipment such as claw machines. We continue to expand our capabilities across hardware development, appearance and function customization, digital management and venue delivery.', introText2: 'We look beyond equipment delivery to the experience, operating efficiency and long-term value each product creates in a real venue.',
-    facts: [['2014', 'Founded'], ['Guangzhou', 'R&D and service base'], ['Integrated', 'Equipment, software, spaces and operations']],
+    eyebrow: 'ABOUT JIUKU', title: 'Equipment, software and spaces—working together to create fun', heroText: 'JiuKu began with unattended amusement equipment and now brings together venue management, IoT and custom software development.',
+    introKicker: 'WHO WE ARE', introTitle: 'Amusement technology, rooted in Panyu, Guangzhou', introText: 'Founded in 2014, Guangzhou JiuKu Amusement Technology began with unattended entertainment equipment such as claw machines. We continue to expand across hardware development, customization, digital management, venue delivery and software engineering.', introText2: 'Beyond equipment, we are developing a venue management platform and take on bespoke business systems, web applications and other outsourced software projects.',
+    facts: [['2014', 'Founded'], ['Guangzhou', 'R&D and service base'], ['Hardware + software', 'Manufacturing, systems and custom development']],
     capabilityKicker: 'WHAT WE DO', capabilityTitle: 'From a single machine to a complete venue', capabilityLead: 'We bring products, technology and delivery services together around the practical needs of operators.',
     capabilities: [
       { no: '01', title: 'Product development', text: 'Single-player, stacked, multiplayer and custom-themed equipment designed for reliability, usability and easier maintenance.' },
-      { no: '02', title: 'Hardware and software', text: 'SaaS and IoT capabilities connect machine status, revenue, inventory and operating management.' },
+      { no: '02', title: 'Software and custom development', text: 'A venue management platform in development, plus bespoke SaaS, IoT, business systems and web application delivery.' },
       { no: '03', title: 'Customization and spaces', text: 'Appearance, function, equipment mix and themed spaces tailored to brands, prizes, gameplay and venues.' },
       { no: '04', title: 'Delivery and support', text: 'A connected path from discovery and product selection through production, delivery and ongoing service.' }
     ],
@@ -122,7 +122,7 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
         <div class="qualification-grid">
           <a v-for="certificate in text.certificates" :key="certificate[0]" :href="certificate[2]" target="_blank" rel="noopener" class="qualification-card">
             <div class="qualification-image"><img :src="certificate[2]" :alt="certificate[0]" loading="lazy"></div>
-            <div><h3>{{ certificate[0] }}</h3><p>{{ certificate[1] }}</p></div>
+            <div class="qualification-copy"><h3>{{ certificate[0] }}</h3><p>{{ certificate[1] }}</p></div>
           </a>
         </div>
       </div>
@@ -134,7 +134,7 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
     </div></section>
 
     <section class="about-section site-container vision-layout">
-      <div class="vision-mark">J</div><div><p class="about-kicker">{{ text.visionKicker }}</p><h2>{{ text.visionTitle }}</h2><p>{{ text.visionText }}</p></div>
+      <div class="vision-mark"><SemanticIcon name="future" /></div><div><p class="about-kicker">{{ text.visionKicker }}</p><h2>{{ text.visionTitle }}</h2><p>{{ text.visionText }}</p></div>
     </section>
 
     <section class="about-cta"><div class="site-container about-cta-layout"><div><h2>{{ text.ctaTitle }}</h2><p>{{ text.ctaText }}</p></div><NuxtLink :to="localePath('/contact')" class="button button-light">{{ text.ctaButton }}</NuxtLink></div></section>
@@ -177,7 +177,7 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
 .qualification-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(31,51,75,.11); }
 .qualification-image { height: 260px; padding: 18px; display: grid; place-items: center; background: #eef2f6; }
 .qualification-image img { width: 100%; height: 100%; object-fit: contain; }
-.qualification-card > div:last-child { padding: 20px 22px 23px; }
+.qualification-copy { position: relative; z-index: 1; min-height: 112px; padding: 20px 22px 23px; color: var(--ink); background: #fff; border-top: 1px solid var(--line); }
 .qualification-card h3 { margin: 0 0 8px; font-size: 18px; }
 .qualification-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .approach-section { padding: 100px 0; color: #fff; background: #142d42; }
@@ -189,7 +189,8 @@ useHead(() => ({ title: text.value.metaTitle, meta: [{ name: 'description', cont
 .value-list h3 { margin: 0 0 7px; font-size: 19px; }
 .value-list p { margin: 0; color: #aebdca; }
 .vision-layout { display: grid; grid-template-columns: 180px 1fr; gap: 70px; align-items: center; }
-.vision-mark { width: 160px; height: 160px; display: grid; place-items: center; color: #fff; background: var(--brand); font-size: 80px; font-weight: 750; }
+.vision-mark { position: relative; width: 160px; height: 160px; padding: 24px; display: grid; place-items: center; color: var(--brand); background: radial-gradient(circle at 72% 22%, #fff 0 8%, transparent 9%), linear-gradient(145deg, #f7fbff, #dfedfb); border: 1px solid #c9deef; border-radius: 38px; box-shadow: 0 22px 45px rgba(20,119,212,.14); }
+.vision-mark::before { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(20,119,212,.16); border-radius: 31px; }
 .vision-layout h2 { max-width: 800px; margin-bottom: 18px; }
 .vision-layout > div > p:last-child { max-width: 850px; margin-bottom: 0; }
 .about-cta { padding: 66px 0; color: #fff; background: var(--brand); }

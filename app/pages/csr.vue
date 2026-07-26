@@ -115,6 +115,11 @@ const copy = {
 
 const lang = computed(() => (locale.value in copy ? locale.value : 'zh-cn') as keyof typeof copy)
 const text = computed(() => copy[lang.value])
+const pillarIcon = (mark: string): 'environment' | 'people' | 'governance' => {
+  if (mark === 'E') return 'environment'
+  if (mark === 'S') return 'people'
+  return 'governance'
+}
 
 useHead(() => ({
   title: text.value.metaTitle,
@@ -157,7 +162,7 @@ useHead(() => ({
         </div>
         <div class="pillar-grid">
           <article v-for="pillar in text.pillars" :key="pillar.mark" class="pillar-card">
-            <div class="pillar-top"><span class="pillar-mark">{{ pillar.mark }}</span><span>{{ pillar.subtitle }}</span></div>
+            <div class="pillar-top"><span class="pillar-symbol"><SemanticIcon :name="pillarIcon(pillar.mark)" /></span><span>{{ pillar.subtitle }}</span></div>
             <h3>{{ pillar.title }}</h3>
             <p>{{ pillar.text }}</p>
             <ul><li v-for="tag in pillar.tags" :key="tag">{{ tag }}</li></ul>
@@ -234,10 +239,15 @@ useHead(() => ({
 .principle-list span { color: var(--brand); font-size: 12px; }
 .pillars-section { background: var(--soft); }
 .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.pillar-card { min-width: 0; padding: 34px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--brand); }
+.pillar-card { position: relative; min-width: 0; overflow: hidden; padding: 34px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 14px 34px rgba(31,51,75,.06); }
+.pillar-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 4px; background: var(--brand); }
+.pillar-card:nth-child(1)::before { background: #26a477; }
+.pillar-card:nth-child(2)::before { background: #e3943d; }
 .pillar-top { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 13px; }
-.pillar-mark { width: 46px; height: 46px; display: grid; place-items: center; color: #fff; background: var(--brand); font-size: 20px; font-weight: 750; }
-.pillar-card h3 { margin: 34px 0 14px; font-size: 25px; }
+.pillar-symbol { width: 62px; height: 62px; padding: 8px; display: grid; place-items: center; color: var(--brand); background: linear-gradient(145deg, #f7fbff, #e4f1fd); border: 1px solid #cfe3f5; border-radius: 18px; }
+.pillar-card:nth-child(1) .pillar-symbol { color: #16815d; background: linear-gradient(145deg, #f5fcf9, #e1f5ed); border-color: #c5e8da; }
+.pillar-card:nth-child(2) .pillar-symbol { color: #b96d1e; background: linear-gradient(145deg, #fffaf4, #fbeddb); border-color: #f1dcc2; }
+.pillar-card h3 { margin: 30px 0 14px; font-size: 25px; }
 .pillar-card > p { min-height: 108px; margin: 0; color: var(--muted); line-height: 1.8; }
 .pillar-card ul { margin: 28px 0 0; padding: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--line); list-style: none; }
 .pillar-card li { padding: 6px 10px; color: var(--brand-dark); background: #eef6fd; font-size: 12px; }

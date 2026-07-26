@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   app: {
     head: {
-      title: '九酷游乐科技 | 娃娃机与无人娱乐设备',
+      title: '九酷游乐科技 | 游乐设备与软件开发',
       meta: [
-        { name: 'description', content: '九酷游乐专注娃娃机、精品机、扭蛋机及无人娱乐设备研发制造，提供 SaaS、物联网与场景定制服务。' },
+        { name: 'description', content: '九酷游乐提供游乐设备、场地管理系统、SaaS、物联网、场景定制与软件外包开发服务。' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ]
     }

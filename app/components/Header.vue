@@ -7,7 +7,7 @@ const scrolled = ref(false)
 
 const links = computed(() => [
   { to: localePath('/'), label: locale.value === 'en-us' ? 'Home' : locale.value === 'zh-tw' ? '首頁' : '首页' },
-  { to: localePath('/services'), label: locale.value === 'en-us' ? 'Products' : locale.value === 'zh-tw' ? '產品方案' : '产品方案' },
+  { to: localePath('/services'), label: locale.value === 'en-us' ? 'Products & Services' : locale.value === 'zh-tw' ? '產品與服務' : '产品与服务' },
   { to: localePath('/csr'), label: locale.value === 'en-us' ? 'Responsibility' : locale.value === 'zh-tw' ? '社會責任' : '社会责任' },
   { to: localePath('/about'), label: locale.value === 'en-us' ? 'About' : locale.value === 'zh-tw' ? '關於九酷' : '关于九酷' },
   { to: localePath('/contact'), label: locale.value === 'en-us' ? 'Contact' : locale.value === 'zh-tw' ? '聯絡我們' : '联系我们' }

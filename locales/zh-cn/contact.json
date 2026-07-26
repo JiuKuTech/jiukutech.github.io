@@ -6,5 +6,7 @@
     "contact.email.value": "82096004{'@'}qq.com",
     "contact.wechat": "微信联系",
     "contact.address": "公司地址",
-    "contact.address.value": "中国广东省广州市番禺区活力动漫科技园A座102号"
+    "contact.address.value": "广东省广州市番禺区活力动漫科技园 A 座 102",
+    "contact.factory_address": "工厂地址",
+    "contact.factory_address.value": "广东省广州市番禺区活力动漫科技园 B 座 421"
 }

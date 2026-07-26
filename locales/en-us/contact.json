@@ -6,5 +6,7 @@
     "contact.email.value": "82096004{'@'}qq.com",
     "contact.wechat": "WeChat Contact",
     "contact.address": "Company Address",
-    "contact.address.value": "No. 102, Block A, Vitality Animation Technology Park, Panyu District, Guangzhou, Guangdong Province, China"
+    "contact.address.value": "Room 102, Building A, Huoli Animation Technology Park, Panyu District, Guangzhou, Guangdong, China",
+    "contact.factory_address": "Factory Address",
+    "contact.factory_address.value": "Room 421, Building B, Huoli Animation Technology Park, Panyu District, Guangzhou, Guangdong, China"
 }

@@ -20,14 +20,32 @@ const organization = {
   url: 'https://jiukuclaw.com',
   email: '82096004@qq.com',
   telephone: '+86-137-1044-1030',
-  foundingDate: '2014',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Building A, Room 102, Huoli Animation Technology Park',
-    addressLocality: 'Panyu District, Guangzhou',
-    addressRegion: 'Guangdong',
-    addressCountry: 'CN'
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+86-137-1044-1030',
+    contactType: 'sales',
+    url: 'https://wa.me/8613710441030',
+    availableLanguage: ['zh-CN', 'zh-TW', 'en']
   },
+  foundingDate: '2014',
+  address: [
+    {
+      '@type': 'PostalAddress',
+      name: 'Company office',
+      streetAddress: 'Room 102, Building A, Huoli Animation Technology Park',
+      addressLocality: 'Panyu District, Guangzhou',
+      addressRegion: 'Guangdong',
+      addressCountry: 'CN'
+    },
+    {
+      '@type': 'PostalAddress',
+      name: 'Factory',
+      streetAddress: 'Room 421, Building B, Huoli Animation Technology Park',
+      addressLocality: 'Panyu District, Guangzhou',
+      addressRegion: 'Guangdong',
+      addressCountry: 'CN'
+    }
+  ],
   sameAs: [
     'https://www.xiaohongshu.com/user/profile/66609efa0000000003033c40',
     'https://weibo.com/jiukutech',

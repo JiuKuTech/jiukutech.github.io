@@ -3,11 +3,11 @@ const { locale } = useI18n()
 const localePath = useLocalePath()
 const socialConfig = ref<Record<string, { icon: string, url: string }>>({})
 const text = computed(() => locale.value === 'en-us' ? {
-  intro: 'Amusement equipment, software and venue solutions for operators worldwide.', contact: 'Contact', phone: 'Phone', email: 'Email', address: 'Panyu, Guangzhou, Guangdong, China', follow: 'Follow us', rights: 'All rights reserved.'
+  intro: 'Amusement equipment, venue management and custom software for businesses worldwide.', contact: 'Contact', phone: 'Phone', whatsapp: 'WhatsApp', email: 'Email', companyAddress: 'Company: Room 102, Building A, Huoli Animation Technology Park, Panyu District, Guangzhou, Guangdong, China', factoryAddress: 'Factory: Room 421, Building B, Huoli Animation Technology Park, Panyu District, Guangzhou, Guangdong, China', follow: 'Follow us', rights: 'All rights reserved.'
 } : locale.value === 'zh-tw' ? {
-  intro: '為全球營運商提供遊樂設備、軟體系統與場景解決方案。', contact: '聯絡方式', phone: '電話', email: '郵箱', address: '廣東省廣州市番禺區活力動漫科技園 A 座 102', follow: '關注我們', rights: '保留所有權利。'
+  intro: '提供遊樂設備、場地管理系統、定制軟體與場景解決方案。', contact: '聯絡方式', phone: '電話', whatsapp: 'WhatsApp', email: '郵箱', companyAddress: '公司：廣東省廣州市番禺區活力動漫科技園 A 座 102', factoryAddress: '工廠：廣東省廣州市番禺區活力動漫科技園 B 座 421', follow: '關注我們', rights: '保留所有權利。'
 } : {
-  intro: '为全球运营商提供游乐设备、软件系统与场景解决方案。', contact: '联系方式', phone: '电话', email: '邮箱', address: '广东省广州市番禺区活力动漫科技园 A 座 102', follow: '关注我们', rights: '保留所有权利。'
+  intro: '提供游乐设备、场地管理系统、定制软件与场景解决方案。', contact: '联系方式', phone: '电话', whatsapp: 'WhatsApp', email: '邮箱', companyAddress: '公司：广东省广州市番禺区活力动漫科技园 A 座 102', factoryAddress: '工厂：广东省广州市番禺区活力动漫科技园 B 座 421', follow: '关注我们', rights: '保留所有权利。'
 })
 onMounted(async () => {
   try { socialConfig.value = await $fetch('/follow/config.json') } catch { socialConfig.value = {} }
@@ -18,7 +18,7 @@ onMounted(async () => {
   <footer class="site-footer">
     <div class="site-container footer-grid">
       <div class="footer-brand"><NuxtLink :to="localePath('/')"><img src="~/assets/logo/colorful.png" :alt="locale === 'en-us' ? 'JiuKu Amusement' : '九酷游乐'"></NuxtLink><p>{{ text.intro }}</p></div>
-      <div class="footer-contact"><h2>{{ text.contact }}</h2><a href="tel:+8613710441030">{{ text.phone }}：+86 137 1044 1030</a><a href="mailto:82096004@qq.com">{{ text.email }}：82096004@qq.com</a><p>{{ text.address }}</p></div>
+      <div class="footer-contact"><h2>{{ text.contact }}</h2><a href="tel:+8613710441030">{{ text.phone }}：+86 137 1044 1030</a><a href="https://wa.me/8613710441030" target="_blank" rel="noopener noreferrer">{{ text.whatsapp }}：+86 137 1044 1030</a><a href="mailto:82096004@qq.com">{{ text.email }}：82096004@qq.com</a><p>{{ text.companyAddress }}</p><p>{{ text.factoryAddress }}</p></div>
       <div class="footer-social"><h2>{{ text.follow }}</h2><div><a v-for="(item, key) in socialConfig" :key="key" :href="item.url" target="_blank" rel="noopener noreferrer" :aria-label="key"><img :src="`/follow/${item.icon}`" :alt="key"></a></div></div>
     </div>
     <div class="site-container footer-bottom">Copyright © 2014 - {{ new Date().getFullYear() }} JiuKu. {{ text.rights }}</div>
