@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jiuku-dpp",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "../../public/dpp",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jiuku-dpp",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "jiuku-dpp-documents" }],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://jiukuclaw.com",
+    "ACCESS_TEAM_DOMAIN": "REPLACE.cloudflareaccess.com",
+    "ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUDIENCE",
+    "ADMIN_EMAILS": "REPLACE_WITH_ADMIN_EMAIL",
+  },
+  "routes": [
+    { "pattern": "jiukuclaw.com/dpp/*", "zone_name": "jiukuclaw.com" },
+    { "pattern": "jiukuclaw.com/dpp", "zone_name": "jiukuclaw.com" },
+  ],
+}

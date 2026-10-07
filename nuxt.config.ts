@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
   css: ['~/assets/styles.css'],
+  // DPP is copied from public/ and served independently of localized Nuxt routes.
+  nitro: { prerender: { ignore: ['/dpp'] } },
   modules: ['@nuxtjs/i18n'],
   app: {
     head: {
