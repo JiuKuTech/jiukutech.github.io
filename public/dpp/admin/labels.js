@@ -8,6 +8,8 @@ for (const item of list) {
   box.className = "label";
   const name = document.createElement("strong");
   name.textContent = "JIUKU";
+  name.translate = false;
+  name.className = "notranslate";
   const image = new Image();
   image.alt = "Passport QR: " + item.sn;
   waits.push(

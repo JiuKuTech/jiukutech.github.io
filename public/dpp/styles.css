@@ -101,7 +101,7 @@ a:focus-visible {
   font-weight: 850;
   letter-spacing: 2px;
 }
-.brand span {
+.brand > span:last-child {
   display: block;
   font-size: 9px;
   letter-spacing: 2.3px;
