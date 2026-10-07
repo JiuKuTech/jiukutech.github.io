@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Find the digital product passport for your JIUKU machine by serial number."
+    />
+    <title>Digital Product Passport | JIUKU</title>
+    <link rel="stylesheet" href="/dpp/styles.css" />
+    <script type="module" src="/dpp/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="/en-us/">JIUKU<span>PRODUCT PASSPORT</span></a
+      ><a href="/en-us/">Visit JIUKU ↗</a>
+    </header>
+    <main id="main" class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">TRACEABLE BY DESIGN</p>
+          <h1>Know your machine.<br />Throughout its life.</h1>
+          <p class="lead">
+            Product information, supporting documents and care guidance,
+            connected to one permanent serial number.
+          </p>
+        </div>
+        <div class="lookup">
+          <p class="eyebrow">FIND A PASSPORT</p>
+          <form id="lookup">
+            <label for="sn">Machine serial number</label
+            ><input
+              id="sn"
+              name="sn"
+              placeholder="JK-CL-SN-20261006-00001"
+              maxlength="23"
+              required
+              autocomplete="off"
+              spellcheck="false"
+            /><button type="submit">
+              View passport <span aria-hidden="true">→</span>
+            </button>
+          </form>
+          <p class="muted">
+            Scan the QR code on your machine or enter its serial number.
+          </p>
+        </div>
+      </section>
+      <p id="message" class="notice" role="status" aria-live="polite">
+        Enter a serial number to view its published passport.
+      </p>
+      <div id="passport" hidden>
+        <section class="passport-head">
+          <div>
+            <p class="eyebrow">DIGITAL PRODUCT PASSPORT</p>
+            <h2 id="product-name"></h2>
+            <p id="serial" class="mono"></p>
+            <p id="metadata" class="muted"></p>
+          </div>
+          <img id="product-image" alt="Product" hidden />
+          <div class="qr">
+            <img
+              id="qr"
+              alt="QR code for this passport"
+              width="128"
+              height="128"
+            /><a id="qr-download">Open QR code</a>
+          </div>
+        </section>
+        <div class="passport-layout">
+          <nav id="section-nav" aria-label="Passport sections"></nav>
+          <div id="sections"></div>
+        </div>
+        <section class="card">
+          <p class="eyebrow">SUPPORTING EVIDENCE</p>
+          <h2>Documents & files</h2>
+          <div id="documents"></div>
+        </section>
+        <p class="muted disclosure">
+          Information is supplied by the manufacturer. A listed document or
+          passport does not by itself certify regulatory compliance. Missing
+          information is shown as “Not provided”.
+        </p>
+      </div>
+    </main>
+    <footer class="bottom">
+      <span>JIUKU · Digital Product Passport</span
+      ><a href="/dpp/admin/">Staff access</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>九酷 DPP 管理后台</title>
+    <link rel="stylesheet" href="/dpp/styles.css" />
+    <script type="module" src="/dpp/admin/admin.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/dpp/">JIUKU<span>DPP 管理后台</span></a
+      ><span id="account" class="muted">正在验证管理员身份…</span>
+    </header>
+    <main class="shell admin-shell">
+      <h1>设备档案管理</h1>
+      <p class="lead">
+        一机一码，终身沿用。保存草稿后，点击「发布」才会更新公开页面。对外资料请填写英文。
+      </p>
+      <p
+        id="status"
+        class="notice message-sticky"
+        role="status"
+        aria-live="polite"
+      >
+        连接后台中…
+      </p>
+      <div id="workspace" hidden>
+        <div class="toolbar">
+          <button id="export-csv" class="secondary">导出 SN 清单（CSV）</button
+          ><button id="export-json" class="secondary">
+            导出完整档案（JSON）</button
+          ><button id="print-selected" class="secondary">打印本批二维码</button>
+        </div>
+        <div class="admin-grid">
+          <aside>
+            <section class="card">
+              <h2>新增设备</h2>
+              <form id="create">
+                <label for="batch-date">SN 编号日期</label
+                ><input id="batch-date" type="date" required /><label
+                  for="batch-count"
+                  >自动生成数量（1–100）</label
+                ><input
+                  id="batch-count"
+                  type="number"
+                  min="1"
+                  max="100"
+                  value="1"
+                  required
+                />
+                <details>
+                  <summary>或录入已有 SN</summary>
+                  <label for="manual-sn">每行一个；填写后优先使用此清单</label
+                  ><textarea
+                    id="manual-sn"
+                    placeholder="JK-CL-SN-20261006-00001"
+                  ></textarea>
+                </details>
+                <p class="muted">
+                  同日自动续号，次日从 00001 开始。新增设备先存为独立草稿。
+                </p>
+                <button type="submit">创建独立档案</button>
+              </form>
+            </section>
+            <section class="card">
+              <h2>查找设备</h2>
+              <form id="search">
+                <label for="query">SN / 编号日期</label
+                ><input id="query" placeholder="20261006" />
+                <div class="toolbar">
+                  <button type="submit" class="secondary">搜索</button>
+                </div>
+              </form>
+              <div id="records" class="record-list"></div>
+              <button id="next" class="secondary" hidden>加载更多</button>
+            </section>
+          </aside>
+          <div id="editor">
+            <section class="card">
+              <h2>选择设备开始编辑</h2>
+              <p>
+                在左侧新增或选择设备。每台设备均有独立档案、上传文件与修改记录。
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bottom">JIUKU · 仅管理员可修改档案 · 公开页无需登录</footer>
+  </body>
+</html>

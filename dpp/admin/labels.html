@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>JIUKU serial labels</title>
+    <link rel="stylesheet" href="/dpp/styles.css" />
+    <script type="module" src="/dpp/admin/labels.js"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="no-print">
+        <h1>Production QR labels</h1>
+        <p id="status" role="status">Loading QR codes…</p>
+        <div class="toolbar">
+          <button id="print" disabled>Print labels</button
+          ><a href="/dpp/admin/">Back to administration</a>
+        </div>
+      </div>
+      <div id="labels" class="labels"></div>
+    </main>
+  </body>
+</html>
