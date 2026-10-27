@@ -8,6 +8,7 @@ const scrolled = ref(false)
 const links = computed(() => [
   { to: localePath('/'), label: locale.value === 'en-us' ? 'Home' : locale.value === 'zh-tw' ? '首頁' : '首页' },
   { to: localePath('/services'), label: locale.value === 'en-us' ? 'Products & Services' : locale.value === 'zh-tw' ? '產品與服務' : '产品与服务' },
+  { to: localePath('/guides'), label: locale.value === 'en-us' ? 'Buying Guides' : locale.value === 'zh-tw' ? '採購指南' : '采购指南' },
   { to: localePath('/csr'), label: locale.value === 'en-us' ? 'Responsibility' : locale.value === 'zh-tw' ? '社會責任' : '社会责任' },
   { to: localePath('/about'), label: locale.value === 'en-us' ? 'About' : locale.value === 'zh-tw' ? '關於九酷' : '关于九酷' },
   { to: localePath('/contact'), label: locale.value === 'en-us' ? 'Contact' : locale.value === 'zh-tw' ? '聯絡我們' : '联系我们' }
@@ -71,7 +72,7 @@ onUnmounted(() => {
 .lang-picker button.active { color: #1477d4; font-weight: 700; }
 .menu-toggle { display: none; width: 40px; height: 40px; padding: 9px; background: transparent; border: 0; }
 .menu-toggle span { display: block; width: 22px; height: 2px; margin: 5px 0; background: #202834; transition: transform .2s ease, opacity .2s ease; }
-@media (max-width: 860px) {
+@media (max-width: 1050px) {
   .site-header { height: 60px; }
   .logo-link img { height: 36px; }
   .menu-toggle { display: block; }

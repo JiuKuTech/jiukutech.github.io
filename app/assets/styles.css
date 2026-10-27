@@ -1,3 +1,19 @@
+.guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.guide-card { padding: 28px; border: 1px solid #e5eaf0; border-radius: 7px; background: #f7faff; }
+.guide-card h2, .guide-card h3 { margin: 0 0 16px; font-size: 23px; line-height: 1.35; }
+.guide-card a, .guide-article a { color: #075da9; text-underline-offset: 4px; }
+.guide-card p { color: #697583; line-height: 1.8; }
+.guide-article { max-width: 820px; }
+.guide-article h1 { margin: 28px 0 22px; font-size: clamp(34px, 4vw, 54px); line-height: 1.15; }
+.guide-summary { font-size: 20px; color: #697583; }
+.guide-article p { line-height: 1.9; }
+.guide-article section { margin-top: 40px; }
+.guide-article h2 { font-size: 26px; line-height: 1.35; }
+.guide-article .button-primary { color: #fff; }
+.guide-related { margin-top: 52px; padding-top: 24px; border-top: 1px solid #e5eaf0; }
+.guide-related li { margin: 14px 0; }
+@media (max-width: 900px) { .guide-grid { grid-template-columns: 1fr; } }
+
 :root {
   --brand: #1477d4;
   --brand-dark: #075da9;
@@ -130,7 +146,7 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid 
   .software-copy > p:not(.section-kicker) { max-width: 700px; }
   .project-video-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-@media (max-width: 860px) { body { padding-top: 60px; } html { scroll-padding-top: 68px; } .home-hero { min-height: 670px; } .catalog-filter { top: 68px; } }
+@media (max-width: 1050px) { body { padding-top: 60px; } html { scroll-padding-top: 68px; } .home-hero { min-height: 670px; } .catalog-filter { top: 68px; } }
 @media (max-width: 680px) {
   .site-container { width: min(100% - 32px, 1200px); }
   .section { padding-top: 62px; padding-bottom: 62px; }

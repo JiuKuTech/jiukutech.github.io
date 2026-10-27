@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { products, type ProductCategory, type SiteLocale } from '~/data/products'
+import { guides, guideLabels } from '~/data/guides'
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
@@ -61,9 +62,9 @@ const copy = {
     ctaTitle: '準備啟動您的遊樂專案？', ctaText: '告訴我們場地、預算和經營目標，九酷團隊將為您匹配設備與落地方案。'
   },
   'en-us': {
-    eyebrow: 'Guangzhou Jiuku Amusement Technology Co., Ltd.', title: 'Turn every machine into a destination for fun',
-    heroText: 'From amusement equipment to venue management and custom software, JiuKu brings hardware, software and operations together.',
-    explore: 'Explore products', consult: 'Start a project', products: 'Featured products', productLead: 'Flexible equipment combinations, from standalone machines to complete themed zones.',
+    eyebrow: 'Guangzhou Jiuku Amusement Technology Co., Ltd.', title: 'Claw Machines & Amusement Equipment for Your Venue',
+    heroText: 'Explore JiuKu claw machines for arcades, shopping malls and family entertainment venues. Contact our team for model details and a quotation.',
+    explore: 'View claw machines', consult: 'Request a quote', products: 'Featured products', productLead: 'Flexible equipment combinations, from standalone machines to complete themed zones.',
     categories: { all: 'All', claw: 'Single player', stacked: 'Stacked systems', multiplayer: 'Multiplayer', themed: 'Custom themes' },
     quote: 'Request quote', allProducts: 'View all products', solutions: 'Integrated solutions', solutionLead: 'Equipment, software and space planned together for a faster launch and sustainable operation.',
     solutionItems: [['Equipment customization', 'Cabinet, appearance and function tailored to prizes, gameplay, venue and brand.'], ['SaaS and IoT', 'Remote visibility into machine status, revenue, inventory and member operations.'], ['Venue customization', 'Equipment planning, themed design and delivery for a complete entertainment space.']],
@@ -97,8 +98,8 @@ const seoCopy = computed(() => ({
     description: '九酷遊樂提供娃娃機及無人娛樂設備、場地管理系統、SaaS、物聯網、場景方案與定制軟體開發服務。'
   },
   'en-us': {
-    title: 'JiuKu | Amusement Equipment & Custom Software',
-    description: 'JiuKu delivers amusement equipment, venue management, SaaS, IoT, complete venue solutions and custom software development.'
+    title: 'JiuKu | Claw Machines & Amusement Equipment',
+    description: 'Explore JiuKu claw machines and amusement equipment for arcades, shopping malls and family entertainment venues. Compare models and request a quotation.'
   }
 })[lang.value])
 useHead(() => ({
@@ -126,6 +127,7 @@ const categories = ['all', 'claw', 'stacked', 'multiplayer', 'themed'] as const
         <div class="button-row">
           <a href="#products" class="button button-primary">{{ text.explore }}</a>
           <NuxtLink :to="localePath('/contact')" class="button button-light">{{ text.consult }}</NuxtLink>
+          <a v-if="lang === 'en-us'" href="https://wa.me/8613710441030" class="button button-outline" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
         </div>
       </div>
     </section>
@@ -142,6 +144,11 @@ const categories = ['all', 'claw', 'stacked', 'multiplayer', 'themed'] as const
         </article>
       </div>
       <div class="section-action"><NuxtLink :to="localePath('/services')" class="button button-outline">{{ text.allProducts }}</NuxtLink></div>
+    </section>
+
+    <section class="section site-container">
+      <div class="section-heading"><div><h2>{{ guideLabels[lang].title }}</h2><p>{{ guideLabels[lang].intro }}</p></div></div>
+      <div class="guide-grid"><article v-for="guide in guides" :key="guide.slug" class="guide-card"><h3><NuxtLink :to="localePath(`/guides/${guide.slug}`)">{{ guide.copy[lang].title }}</NuxtLink></h3><p>{{ guide.copy[lang].summary }}</p><NuxtLink :to="localePath(`/guides/${guide.slug}`)">{{ guideLabels[lang].read }} →</NuxtLink></article></div>
     </section>
 
     <section class="section solutions-band">
